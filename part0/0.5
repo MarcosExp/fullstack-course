@@ -1,0 +1,33 @@
+sequenceDiagram
+  particpant Browser
+  participant Server
+  
+  Browser-->>Server GET https://studies.cs.helsinki.fi/exampleapp/spa
+  activate Server
+  Server-->>Browser: HTML document
+  deactivate Server
+
+  Browser-->>Server GET https://studies.cs.helsinki.fi/exampleapp/main.css
+  activate Server
+  Server-->>Browser: CSS document
+  deactivate Server
+
+  Browser-->>Server GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+  activate Server
+  Server-->>Browser: JavaScrip document
+  deactivate Server
+
+  Note right of browser: The browser starts executing the JavaScript code 
+
+  Browser-->>Server GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  activate Server
+  Server-->>Browser: [{"content" : "Note content", "date": "2024-1-1"},...]
+  deactivate Server
+
+  Browser-->>Server POST https://studies.cs.helsinki.fi/exampleapp/data.json
+  activate Server Status: 201 Created
+  Server-->>Browser: [{"content" : "Note content", "date": "2024-1-1"},...]
+  deactivate Server
+  Note right of Browser: The browser updates the note list dynamically without reloading the page
+  
+  
