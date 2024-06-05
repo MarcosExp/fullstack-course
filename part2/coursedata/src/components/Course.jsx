@@ -10,6 +10,18 @@ return (
     )
 }
 
+const Total = ({parts})  => {
+
+  const exercisesArray = (parts.map(part=> part.exercises))
+  const total = exercisesArray.reduce((s,p) => s+p)
+
+  return (
+    <div>
+      <p><strong>Total of exercises {total}</strong></p>
+    </div>
+  )
+}
+
 const Content = ({parts}) => {
     return (
       <div>
@@ -25,6 +37,7 @@ const Course = ({course}) => {
         <div>
           <Header course={course} />
           <Content parts={course.parts}/>
+          <Total parts={course.parts}/>
         </div>
       )
 
