@@ -35,9 +35,6 @@ To run the exercises in this repository, you will need to have the following ins
 
     ```bash
     npm install
-    # or
-    yarn install
-    ```
 
 4. Run the exercise:
 
