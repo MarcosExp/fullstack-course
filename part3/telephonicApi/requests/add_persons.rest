@@ -1,0 +1,26 @@
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Marcos Expósito",
+    "number": "123456789"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Laura",
+    "number": "987654321"
+}
+
+### Missing name
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "",
+    "number": "987654321"
+}
