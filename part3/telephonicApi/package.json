@@ -6,16 +6,20 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rimraf dist && cd ../../part2/telefonicagenda && npm run build && ncp dist ../../part3/telefonicApi/dist",
+    "deploy:full": "npm run build:ui && git add . && git commit -m 'Build frontend and deploy to backend' && git push"
   },
-  "author": "Matti Luukkainen",
-  "license": "MIT",
+  "author": "Marcos Expósito",
+  "license": "",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "ncp": "^2.0.0",
+    "nodemon": "^3.1.4",
+    "rimraf": "^5.0.7"
   }
 }
